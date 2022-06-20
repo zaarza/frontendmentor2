@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* Custom Properties */
+:root {
+  /* Colors */
+  --color-p-1: hsl(263, 55%, 52%);
+  --color-p-2: hsl(217, 19%, 35%);
+  --color-p-2a: hsl(217, 19%, 35%, 80%);
+  --color-p-2b: hsl(217, 19%, 35%, 50%);
+  --color-p-3: hsl(219, 29%, 14%);
+  --color-p-4: hsl(0, 0%, 100%);
+  --color-p-4a: hsl(0, 0%, 100%, 80%);
+  --color-p-4b: hsl(0, 0%, 100%, 50%);
+  --color-n-1: hsl(0, 0%, 81%);
+  --color-n-2: hsl(210, 46%, 95%);
+
+  /* Typhography */
+  --f-w-1: 500;
+  --f-w-2: 600;
+  --f-1: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* Reset Styling */
+*, body, html {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-n-2);
+  font-family: var(--f-1);
+}
+
+section.container-grid {
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: grid;
+  gap: 30px;
+}
+
+/* Responsive Breakpoints */
+@media screen and (min-width: 768px) {
+  section.container-grid {
+    grid-template-areas: 
+    'one one two five'
+    'three four four five';
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.container-grid {
+    grid-template-areas: 
+    'one one'
+    'two three'
+    'four four'
+    'five five';
+  }
+}
+
+@media screen and (max-width: 375px) {
+  section.container-grid {
+    grid-template-areas: 
+    'one'
+    'two'
+    'three'
+    'four'
+    'five';
+  }
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.headshot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--color-p-4b);
+}
+
+.card {
+  padding: 40px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.068);
+}
+
+.emphasize {
+  font-size: 1.4rem;
+  font-weight: var(--f-w-2);
+}
+
+.review {
+  font-size: .9rem;
+}
+
+.testimonial-1 {
+  background-color: var(--color-p-1);
+  background-image: url('../images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position-x: 80%;
+  grid-area: one;
+}
+
+.testimonial-2 {
+  background-color: var(--color-p-2);
+  grid-area: two;
+}
+
+.testimonial-3 {
+  background-color: var(--color-p-4);
+  grid-area: three;
+}
+
+.testimonial-4 {
+  background-color: var(--color-p-3);
+  grid-area: four;
+}
+
+.testimonial-5 {
+  background-color: var(--color-p-4);
+  grid-area: five;
+}
+
+/* Text Color */
+/* Light Color */
+.name-light,
+.emphasize-light {
+  color: var(--color-p-4);
+}
+
+.title-light {
+  color: var(--color-p-4a);
+}
+
+.review-light {
+  color: var(--color-p-4b);
+}
+
+/* Dark Color */
+.name-dark,
+.emphasize-dark {
+  color: var(--color-p-2);
+}
+
+.title-dark {
+  color: var(--color-p-2b);
+}
+
+.review-dark {
+  color: var(--color-p-2a);
+}
+/* End of Text Color */
